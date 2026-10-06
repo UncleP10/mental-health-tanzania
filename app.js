@@ -193,7 +193,7 @@ $$('.vmo-tab').forEach(tab => tab.addEventListener('click', () => {
   const orb = $('#tzOrb'), phaseEl = $('#tzPhase'), countEl = $('#tzCount'),
         cyclesEl = $('#tzCycles'), toggle = $('#tzToggle'), soundBtn = $('#tzSound');
   let seq = [4, 4, 4, 4], labels = ['Inhale', 'Hold', 'Exhale', 'Hold'];
-  let running = false, step = 0, remaining = 0, cycles = 0, timer = null, scale = .62;
+  let running = false, step = -1, remaining = 0, cycles = 0, timer = null, scale = .62, firstPass = true;
 
   // soft chime via WebAudio (off by default)
   let audio = null, soundOn = false;
@@ -234,34 +234,32 @@ $$('.vmo-tab').forEach(tab => tab.addEventListener('click', () => {
   function reset() {
     phaseEl.textContent = 'Ready?'; countEl.textContent = '—';
     toggle.textContent = 'Begin breathing';
+    step = -1; remaining = 0; firstPass = true;
     orb.style.transitionDuration = '800ms';
     orb.style.transform = 'scale(.62)'; orb.classList.remove('inhale');
     scale = .62;
   }
+  function enterPhase() {
+    step = (step + 1) % seq.length;
+    if (step === 0) {
+      if (!firstPass) { cycles++; cyclesEl.textContent = `${cycles} cycle${cycles === 1 ? '' : 's'}`; }
+      firstPass = false;
+    }
+    phaseEl.textContent = labels[step];
+    remaining = seq[step];
+    setScale();
+    if (labels[step] === 'Inhale') chime(432); else if (labels[step] === 'Exhale') chime(384);
+  }
   function next() {
     if (!running) return;
-    if (step === 0 && remaining === 0) {
-      phaseEl.textContent = labels[0];
-      remaining = seq[0];
-      setScale();
-      chime(labels[0] === 'Inhale' ? 432 : 384);
-    }
-    if (remaining > 0) {
-      countEl.textContent = remaining;
-      remaining--;
-      timer = setTimeout(next, 1000);
-    } else {
-      step = (step + 1) % seq.length;
-      if (step === 0) { cycles++; cyclesEl.textContent = `${cycles} cycle${cycles === 1 ? '' : 's'}`; }
-      phaseEl.textContent = labels[step];
-      remaining = seq[step];
-      setScale();
-      if (labels[step] === 'Inhale') chime(432); else if (labels[step] === 'Exhale') chime(384);
-      timer = setTimeout(next, 0);
-    }
+    if (remaining <= 0) enterPhase();
+    countEl.textContent = remaining;
+    remaining--;
+    timer = setTimeout(next, 1000);
   }
   function start() {
-    running = true; step = 0; remaining = 0;
+    running = true; step = -1; remaining = 0; cycles = 0; firstPass = true;
+    cyclesEl.textContent = '0 cycles';
     toggle.textContent = 'Pause';
     next();
   }
@@ -273,6 +271,7 @@ $$('.vmo-tab').forEach(tab => tab.addEventListener('click', () => {
   toggle.addEventListener('click', () => {
     if (running) { stop(); return; }
     running = true; toggle.textContent = 'Pause';
+    if (step >= 0) phaseEl.textContent = labels[step];
     next();
   });
 })();
