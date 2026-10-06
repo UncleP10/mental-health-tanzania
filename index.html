@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mental Health Tanzania — Wellbeing of the Mind</title>
+<meta name="description" content="Mental Health Tanzania (MHT) — the leading mental healthcare organization in Tanzania. Advocacy, psychoeducation, clinical & tele-mental health services, and Programu Tuliza." />
+<link rel="icon" type="image/png" href="assets/logo-dark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ambient background -->
+<div class="ambient" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="grain"></div>
+</div>
+
+<!-- scroll progress -->
+<div class="progress-rail" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- journey dots -->
+<nav class="journey" aria-label="Section journey">
+  <a href="#home" data-label="Home"></a>
+  <a href="#feel" data-label="Check in"></a>
+  <a href="#about" data-label="Who we are"></a>
+  <a href="#workplace" data-label="Workplace"></a>
+  <a href="#vmo" data-label="Vision"></a>
+  <a href="#tuliza" data-label="Tuliza"></a>
+  <a href="#story" data-label="Our story"></a>
+  <a href="#impact" data-label="Impact"></a>
+  <a href="#join" data-label="Join us"></a>
+  <a href="#contact" data-label="Contact"></a>
+</nav>
+
+<!-- header -->
+<header class="site-head" id="siteHead">
+  <a class="brand" href="#home" aria-label="Mental Health Tanzania home">
+    <img class="logo-badge" src="assets/logo-icon.png" alt="Mental Health Tanzania logo" />
+    <span class="brand-txt">
+      <strong>Mental Health Tanzania</strong>
+      <em>Wellbeing of the mind</em>
+    </span>
+  </a>
+  <nav class="main-nav" id="mainNav">
+    <a href="#about">About</a>
+    <a href="#vmo">Vision</a>
+    <a href="#tuliza">Tuliza</a>
+    <a href="#story">Our Story</a>
+    <a href="#join">Get Involved</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="head-ctas">
+    <a class="head-phone" href="tel:+255742501501">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      +255 742 501 501
+    </a>
+    <a class="btn btn-solid btn-sm" href="#contact">Get Support</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <canvas id="neuro" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="eyebrow reveal">Karibu sana — welcome to</p>
+    <h1 class="hero-title">
+      <span class="line"><span>Mental Health</span></span>
+      <span class="line"><span class="accent">Tanzania</span></span>
+    </h1>
+    <p class="hero-sub reveal">The leading mental healthcare organization in Tanzania — creating, designing
+      and implementing programs, projects, campaigns and activities across the country and beyond.</p>
+    <div class="hero-ctas reveal">
+      <a href="#about" class="btn btn-solid" data-magnet>Discover MHT</a>
+      <a href="#tuliza" class="btn btn-ghost" data-magnet>Breathe with Tuliza</a>
+    </div>
+    <a class="mood-prompt reveal" href="#feel">
+      <span class="pulse-dot"></span> How are you feeling right now?
+    </a>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span></span>scroll</div>
+</section>
+
+<!-- ============ MOOD CHECK-IN ============ -->
+<section class="feel" id="feel">
+  <div class="wrap">
+    <div class="feel-card reveal">
+      <div class="feel-head">
+        <h2 class="h-serif">A moment for <em>you</em></h2>
+        <p>Before you explore — check in with yourself. It takes five seconds.</p>
+      </div>
+      <div class="moods" id="moods" role="group" aria-label="How are you feeling?">
+        <button class="mood" data-mood="calm"      data-msg="Beautiful. Savour it — calm is worth noticing."><i>◍</i><span>Calm</span></button>
+        <button class="mood" data-mood="hopeful"   data-msg="Hold onto that. Hope is a powerful medicine."><i>☀</i><span>Hopeful</span></button>
+        <button class="mood" data-mood="tired"     data-msg="Rest is not a luxury. Be gentle with yourself today."><i>☾</i><span>Tired</span></button>
+        <button class="mood" data-mood="anxious"   data-msg="That's okay. Try a slow breath with Tuliza below — it genuinely helps."><i>〜</i><span>Anxious</span></button>
+        <button class="mood" data-mood="stressed"  data-msg="You carry a lot. A one-minute Tuliza pause can lighten it."><i>⚡</i><span>Stressed</span></button>
+        <button class="mood" data-mood="low"       data-msg="We're sorry it's heavy. You're not alone — MHT is a phone call away."><i>☂</i><span>Low</span></button>
+      </div>
+      <div class="feel-out" id="feelOut" aria-live="polite">
+        <p class="feel-msg" id="feelMsg">Choose a word above that fits this moment.</p>
+        <a href="#tuliza" class="btn btn-solid btn-sm hidden" id="feelBreathe">Begin a one-minute Tuliza breath</a>
+        <a href="tel:+255742501501" class="btn btn-ghost btn-sm hidden" id="feelCall">Talk to someone now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / THEMATIC FOCUS ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <p class="eyebrow reveal">Who we are</p>
+    <h2 class="h-serif reveal">What exactly is <em>MHT</em> all about?</h2>
+    <p class="lead reveal">MHT is the leading mental healthcare organization in Tanzania for creating, designing and
+      implementing programs, projects, campaigns and activities across the country and beyond — built on
+      <strong>two thematic focuses</strong> and <strong>six specialty areas</strong>.</p>
+
+    <div class="focus-grid">
+      <article class="focus-card reveal" data-flip>
+        <div class="fc-face fc-front">
+          <span class="fc-num">01</span>
+          <h3>Sustain Wellbeing</h3>
+          <p>To sustain and maintain the mental health and wellbeing of every individual through
+            intervention &amp; preventive measures.</p>
+          <span class="fc-more">Tap to explore ↻</span>
+        </div>
+        <div class="fc-face fc-back">
+          <h4>Prevention &amp; Promotion</h4>
+          <ul>
+            <li>Psychoeducation</li>
+            <li>Mental health awareness &amp; advocacy</li>
+            <li>Training &amp; mentorship</li>
+            <li>Community psychological &amp; psychosocial support</li>
+            <li>Mental health research</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="focus-card reveal" data-flip>
+        <div class="fc-face fc-front">
+          <span class="fc-num">02</span>
+          <h3>Treat &amp; Manage</h3>
+          <p>To provide treatments and management of mental illnesses and psychological challenges to
+            service users through holistic clinical &amp; psychiatric care.</p>
+          <span class="fc-more">Tap to explore ↻</span>
+        </div>
+        <div class="fc-face fc-back">
+          <h4>Clinical &amp; Psychiatric Services</h4>
+          <ul>
+            <li>Screening, assessments &amp; diagnosis</li>
+            <li>Psychotherapy</li>
+            <li>Counselling &amp; guidance</li>
+            <li>Tele-Mental Health Services</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-n" data-count="2">0</span><span class="stat-l">Thematic focuses</span></div>
+      <div class="stat"><span class="stat-n" data-count="6">0</span><span class="stat-l">Specialty areas</span></div>
+      <div class="stat"><span class="stat-n" data-count="100" data-suffix="%">0</span><span class="stat-l">Volunteer-powered</span></div>
+      <div class="stat"><span class="stat-n" data-count="1000000" data-compact="1">0</span><span class="stat-l">Lives impacted</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKPLACE / BURNOUT CHECKER ============ -->
+<section class="workplace" id="workplace">
+  <div class="wrap">
+    <div class="wp-grid">
+      <div class="wp-copy">
+        <p class="eyebrow reveal">For employers &amp; teams</p>
+        <h2 class="h-serif reveal">Is your workplace <em>running on empty</em>?</h2>
+        <p class="reveal">Employees may be experiencing work-life imbalance and burnout due to stress, heavy
+          workload, overtime, interpersonal challenges or absenteeism. They may need a
+          <strong>mental health retreat</strong> — our experience and area of expertise for years.</p>
+        <p class="reveal">Prioritize your team's mental well-being — book our
+          <strong>Workplace Mental Health Training</strong> &amp; Employee Assistance Program.</p>
+        <div class="reveal wp-ctas">
+          <a class="btn btn-solid" href="tel:+255742501501" data-magnet>Call 0742 501 501</a>
+          <a class="btn btn-ghost" href="https://wa.me/255742501501" target="_blank" rel="noopener" data-magnet>WhatsApp us</a>
+        </div>
+      </div>
+
+      <div class="wp-tool reveal">
+        <h3>Burnout signal check</h3>
+        <p class="wp-tool-sub">Tick what you've noticed in your team lately.</p>
+        <div class="signals" id="signals">
+          <button data-w="2">Chronic stress</button>
+          <button data-w="2">Heavy workload</button>
+          <button data-w="2">Working overtime</button>
+          <button data-w="1">Absenteeism</button>
+          <button data-w="1">Interpersonal friction</button>
+          <button data-w="2">Work-life imbalance</button>
+          <button data-w="1">Low morale</button>
+          <button data-w="1">Exhaustion</button>
+        </div>
+        <div class="gauge">
+          <div class="gauge-track"><div class="gauge-fill" id="gaugeFill"></div></div>
+          <div class="gauge-labels"><span>Steady</span><span>Strained</span><span>Burnout risk</span></div>
+        </div>
+        <p class="gauge-out" id="gaugeOut">Select signals above to see your team's risk level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION / MISSION / OBJECTIVES ============ -->
+<section class="vmo" id="vmo">
+  <div class="wrap">
+    <p class="eyebrow reveal">What drives us</p>
+    <h2 class="h-serif reveal">Our compass</h2>
+    <div class="vmo-tabs reveal" role="tablist" aria-label="Vision Mission Objectives">
+      <button class="vmo-tab active" role="tab" aria-selected="true" data-tab="vision">Vision</button>
+      <button class="vmo-tab" role="tab" aria-selected="false" data-tab="mission">Mission</button>
+      <button class="vmo-tab" role="tab" aria-selected="false" data-tab="objectives">Objectives</button>
+    </div>
+    <div class="vmo-stage reveal">
+      <div class="vmo-panel active" id="panel-vision" role="tabpanel">
+        <span class="vmo-mark">”</span>
+        <p>To see every individual well-informed on taking care of their mental health and wellbeing,
+          understanding preventive and intervention measures of mental illnesses and psychological
+          challenges — with access to quality, reliable mental health services and psychological support
+          in a professional and trustworthy ambiance.</p>
+      </div>
+      <div class="vmo-panel" id="panel-mission" role="tabpanel" hidden>
+        <span class="vmo-mark">”</span>
+        <p>To sustain mental health and wellbeing of individuals through intervention and preventive
+          measures — psychoeducation, mental health awareness, community psychological &amp; psychosocial
+          support, research programs, training, advocating, promoting and supporting mental healthcare
+          systems — while addressing mental illnesses through clinical and psychiatric services.</p>
+      </div>
+      <div class="vmo-panel" id="panel-objectives" role="tabpanel" hidden>
+        <span class="vmo-mark">”</span>
+        <p>We're always aiming at impact: advancing psychoeducation and awareness, building capacity through
+          training and mentorship, expanding community psychosocial support, driving mental health
+          research, and delivering screening, psychotherapy, counselling and Tele-Mental Health services
+          to every Tanzanian who needs them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM TULIZA ============ -->
+<section class="tuliza" id="tuliza">
+  <div class="wrap">
+    <div class="tz-grid">
+      <div class="tz-copy">
+        <p class="eyebrow reveal">Programu Tuliza — self-help tool</p>
+        <h2 class="h-serif reveal"><em>Tuliza</em> means “calm”.</h2>
+        <p class="reveal">MHT created <strong>Programu Tuliza</strong> — a self-help tool for managing depression,
+          anxiety and stress-related disorders. Try it right here: guided breathing, the simplest and most
+          proven way to calm your nervous system.</p>
+        <ul class="tz-points reveal">
+          <li>Depression &amp; low mood</li>
+          <li>Anxiety &amp; panic</li>
+          <li>Stress-related disorders</li>
+        </ul>
+        <p class="tz-note reveal">Pick a rhythm, press start, and follow the orb. Even 60 seconds helps.</p>
+      </div>
+
+      <div class="tz-tool reveal" id="tzTool">
+        <div class="tz-techniques" role="group" aria-label="Breathing technique">
+          <button class="tz-tech active" data-tech="box"      data-seq="4,4,4,4" data-labels="Inhale,Hold,Exhale,Hold">Box · 4-4-4-4</button>
+          <button class="tz-tech" data-tech="relax"   data-seq="4,7,8"   data-labels="Inhale,Hold,Exhale">Relax · 4-7-8</button>
+          <button class="tz-tech" data-tech="coherent" data-seq="5,5"     data-labels="Inhale,Exhale">Coherent · 5-5</button>
+        </div>
+        <div class="tz-stage">
+          <div class="tz-orb-wrap">
+            <div class="tz-ring"></div>
+            <div class="tz-orb" id="tzOrb"></div>
+            <div class="tz-center">
+              <span class="tz-phase" id="tzPhase">Ready?</span>
+              <span class="tz-count" id="tzCount">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="tz-controls">
+          <button class="btn btn-solid" id="tzToggle">Begin breathing</button>
+          <div class="tz-meta">
+            <span id="tzCycles">0 cycles</span>
+            <button class="tz-sound" id="tzSound" aria-pressed="false" title="Soft chime">
+              <svg viewBox="0 0 24 24" class="snd-off"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY / TIMELINE ============ -->
+<section class="story" id="story">
+  <div class="wrap">
+    <p class="eyebrow reveal">Our history</p>
+    <h2 class="h-serif reveal">The success story of <em>MHT</em></h2>
+    <p class="lead reveal">Pioneering the advocacy for transformation of mental healthcare in Tanzania —
+      proudly one of the first and longest-standing mental health organizations in the country.</p>
+
+    <div class="timeline" id="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <img src="assets/advocacy-podium.jpg" alt="MHT advocate speaking at a podium" loading="lazy" />
+          <h3>Frontline advocacy</h3>
+          <p>Serving as a leading advocate — a frontline organization — for revolutionizing mental health
+            services across the country.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <img src="assets/press.jpg" alt="MHT press interview with media microphones" loading="lazy" />
+          <h3>A national voice</h3>
+          <p>Inspiring, influencing and acting as a role model to hundreds of agencies, NGOs, government
+            bodies and hundreds of thousands of individuals championing mental health advocacy.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <img src="assets/team-banner.jpg" alt="MHT team posing in front of a Mental Health Tanzania banner" loading="lazy" />
+          <h3>Shifting the narrative</h3>
+          <p>Setting the standard and motivating other mental health stakeholders to transform how Tanzania
+            talks about — and treats — the mind.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="board reveal">
+      <img src="assets/board-meeting.jpg" alt="Advisory board members at Mental Health Tanzania" loading="lazy" />
+      <div>
+        <h3>Guided by experience</h3>
+        <p>MHT's advisory board and professional volunteers bring clinical expertise, lived experience and
+          community trust to every program we run.</p>
+        <a href="#join" class="btn btn-ghost btn-sm">Meet how to join</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT GALLERY ============ -->
+<section class="impact" id="impact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Achievements &amp; milestones</p>
+    <h2 class="h-serif reveal">Impact in <em>millions</em> of lives</h2>
+    <p class="lead reveal">Programs, projects, campaigns and activities reaching communities, schools,
+      workplaces and airwaves across Tanzania.</p>
+  </div>
+  <div class="marquee reveal" aria-label="MHT impact photo reel">
+    <div class="marquee-track" id="marqueeTrack">
+      <figure><img src="assets/community.jpg" alt="Community mental health session" loading="lazy"></figure>
+      <figure><img src="assets/school-session.jpg" alt="School outreach session" loading="lazy"></figure>
+      <figure><img src="assets/audience.jpg" alt="Large conference audience" loading="lazy"></figure>
+      <figure><img src="assets/hall-session.jpg" alt="Community hall workshop" loading="lazy"></figure>
+      <figure><img src="assets/tunajali.jpg" alt="Tunajali afya yako ya akili campaign team" loading="lazy"></figure>
+      <figure><img src="assets/training-class.jpg" alt="Mental health training class" loading="lazy"></figure>
+      <figure><img src="assets/podcast.jpg" alt="MHT radio podcast recording" loading="lazy"></figure>
+      <figure><img src="assets/group-outdoors.jpg" alt="MHT volunteers group photo outdoors" loading="lazy"></figure>
+      <figure><img src="assets/expo.jpg" alt="MHT awareness expo table" loading="lazy"></figure>
+      <figure><img src="assets/conference.jpg" alt="Mental Health Tanzania conference" loading="lazy"></figure>
+    </div>
+  </div>
+
+  <div class="wrap posts-wrap">
+    <h3 class="posts-title reveal">Everything, in one place</h3>
+    <p class="posts-sub reveal">Search our posts &amp; pages — the same links from our site, gathered here.</p>
+    <div class="posts-search reveal">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+      <input type="search" id="postSearch" placeholder="Try “volunteer”, “objectives”, “organogram”…" aria-label="Search posts" />
+    </div>
+    <ul class="posts" id="posts">
+      <li><a href="https://mht.care" target="_blank" rel="noopener"><span>01</span>About Us</a></li>
+      <li><a href="#contact"><span>02</span>Contact Us</a></li>
+      <li><a href="#about"><span>03</span>Thematic Focuses &amp; Specialty Areas</a></li>
+      <li><a href="#vmo"><span>04</span>MHT Objectives</a></li>
+      <li><a href="#impact"><span>05</span>Achievements &amp; Milestones — Programs, Projects, Campaigns &amp; Activities</a></li>
+      <li><a href="#impact"><span>06</span>How MHT Impacted Millions of Tanzanians</a></li>
+      <li><a href="#join"><span>07</span>What to Benefit When Joining the MHT Team</a></li>
+      <li><a href="https://mht.care" target="_blank" rel="noopener"><span>08</span>MHT Organogram</a></li>
+      <li><a href="#tuliza"><span>09</span>Program Tuliza — Self Help Tool</a></li>
+      <li><a href="#join"><span>10</span>Why Choose MHT — Institutional Capacity</a></li>
+      <li><a href="https://mht.care" target="_blank" rel="noopener"><span>11</span>Corporate Mental Health Training &amp; Employee Assistance Program</a></li>
+      <li><a href="https://mht.care" target="_blank" rel="noopener"><span>12</span>MHT Blog</a></li>
+    </ul>
+    <p class="posts-empty hidden" id="postsEmpty">Nothing found — try another word.</p>
+  </div>
+</section>
+
+<!-- ============ GET INVOLVED ============ -->
+<section class="join" id="join">
+  <div class="wrap">
+    <p class="eyebrow reveal">Karibu sana — you are most welcome</p>
+    <h2 class="h-serif reveal">Be part of the <em>team</em></h2>
+    <p class="lead reveal">MHT welcomes ambassadors, volunteers, interns and practicum/fieldwork students — from
+      Tanzania and anywhere in the world. Volunteers are our backbone: they power 100% of our programs with
+      time, skills, energy and heart — whether from mental health backgrounds or fields like technology,
+      law, engineering and environment.</p>
+
+    <div class="join-grid">
+      <article class="join-card reveal" data-tilt>
+        <div class="jc-img"><img src="assets/volunteers.jpg" alt="MHT ambassadors smiling together" loading="lazy"></div>
+        <div class="jc-body">
+          <h3>Ambassador &amp; Volunteer</h3>
+          <p>Be the bridge — volunteers have provided the connections, networking and hands that let MHT excel.</p>
+          <a href="https://wa.me/255742501501?text=I%20would%20like%20to%20volunteer%20with%20MHT" target="_blank" rel="noopener" class="jc-link">Apply on WhatsApp →</a>
+        </div>
+      </article>
+      <article class="join-card reveal" data-tilt>
+        <div class="jc-img"><img src="assets/ambassadors.jpg" alt="Young MHT ambassadors" loading="lazy"></div>
+        <div class="jc-body">
+          <h3>Internship</h3>
+          <p>Learn inside a pioneering organization — gain real experience in programs, research and community work.</p>
+          <a href="https://wa.me/255742501501?text=I%20am%20interested%20in%20an%20MHT%20internship" target="_blank" rel="noopener" class="jc-link">Apply on WhatsApp →</a>
+        </div>
+      </article>
+      <article class="join-card reveal" data-tilt>
+        <div class="jc-img"><img src="assets/counselling.jpg" alt="MHT staff member in a counselling conversation" loading="lazy"></div>
+        <div class="jc-body">
+          <h3>Practicum / Fieldwork</h3>
+          <p>Placement for students — participate in real community mental health promotion across Tanzania.</p>
+          <a href="https://wa.me/255742501501?text=I%20am%20interested%20in%20practicum%20at%20MHT" target="_blank" rel="noopener" class="jc-link">Apply on WhatsApp →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="benefits reveal">
+      <h3>What you gain when you join MHT</h3>
+      <div class="benefit-chips">
+        <span>Real community impact</span><span>Mentorship &amp; training</span><span>Professional networks</span>
+        <span>Field experience</span><span>Certificates &amp; references</span><span>A cause that matters</span>
+      </div>
+      <p>Partners, sponsors and agencies are equally welcome — MHT looks for committed, talented and
+        passionate individuals, companies and NGOs willing to support or work with us.</p>
+      <a class="btn btn-solid" href="#contact" data-magnet>Partner with us</a>
+    </div>
+
+    <div class="wa-channel reveal">
+      <img src="assets/whatsapp-channel.png" alt="WhatsApp Channel" />
+      <div>
+        <h3>Daily updates, in your pocket</h3>
+        <p>Follow the MHT WhatsApp Channel for daily mental health updates.</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="https://whatsapp.com/channel/0029VaD60Ak4tRrpOGF8Vu2J" target="_blank" rel="noopener">Follow channel</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal">We are listening</p>
+    <h2 class="h-serif reveal">Reach out — <em>tunajali</em></h2>
+    <p class="lead reveal">“Tunajali afya yako ya akili” — we care about your mental health.
+      Call, text or WhatsApp us any time.</p>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="tel:+255742501501" data-tilt>
+        <span class="cc-label">Call / Text / WhatsApp</span>
+        <span class="cc-num">+255 742 501 501</span>
+      </a>
+      <a class="contact-card reveal" href="tel:+255683551117" data-tilt>
+        <span class="cc-label">Call / Text / WhatsApp</span>
+        <span class="cc-num">+255 683 551 117</span>
+      </a>
+      <a class="contact-card reveal" href="tel:+255746779787" data-tilt>
+        <span class="cc-label">Call / Text / WhatsApp</span>
+        <span class="cc-num">+255 746 779 787</span>
+      </a>
+      <a class="contact-card whatsapp reveal" href="https://wa.me/255742501501" target="_blank" rel="noopener" data-tilt>
+        <span class="cc-label">Fastest reply</span>
+        <span class="cc-num">Click to WhatsApp →</span>
+      </a>
+    </div>
+    <div class="socials reveal">
+      <a href="https://mht.care" target="_blank" rel="noopener" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.2 22H3l7.3-8.3L2.4 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></a>
+      <a href="https://mht.care" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.5a1.4 1.4 0 1 0 0-2.9 1.4 1.4 0 0 0 0 2.9z"/></svg></a>
+      <a href="https://mht.care" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+      <a href="https://mht.care" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.3 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4.2 2 2 0 0 1 0 4.2zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></a>
+      <a href="https://mht.care" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6c-.3-1-1.1-1.8-2.1-2C18.6 4 12 4 12 4s-6.6 0-8.4.4c-1 .2-1.8 1-2.1 2C1 8.2 1 12 1 12s0 3.8.5 5.6c.3 1 1.1 1.8 2.1 2 1.8.4 8.4.4 8.4.4s6.6 0 8.4-.4c1-.2 1.8-1 2.1-2 .5-1.8.5-5.6.5-5.6zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+      <a href="https://whatsapp.com/channel/0029VaD60Ak4tRrpOGF8Vu2J" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4 0 .1 0 .6-.2 1.2z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img class="foot-logo" src="assets/logo-light.png" alt="Mental Health Tanzania — Wellbeing of the mind" />
+      <p>MHT © 2026.<br>All Rights Reserved.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#home">Home</a><a href="#contact">Contact Us</a><a href="#about">Thematic Focuses &amp; Specialty Areas</a>
+      <a href="#vmo">Objectives</a><a href="#story">Our History</a><a href="#impact">Our Impacts to Millions</a>
+      <a href="#impact">Achievements — Programs, Projects &amp; Campaigns</a><a href="#join">Institutional Capacity</a>
+      <a href="#join">What to Benefit When Joining</a><a href="https://mht.care" target="_blank" rel="noopener">MHT Organogram</a>
+      <a href="https://mht.care" target="_blank" rel="noopener">Blog</a><a href="#workplace">Corporate Training &amp; EAP</a>
+    </nav>
+  </div>
+</footer>
+
+</main>
+
+<!-- floating actions -->
+<a class="fab fab-wa" href="https://wa.me/255742501501" target="_blank" rel="noopener" aria-label="WhatsApp us">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4 0 .1 0 .6-.2 1.2z"/></svg>
+</a>
+<button class="fab fab-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8 1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12z"/></svg>
+</button>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+<script src="app.js"></script>
+</body>
+</html>
