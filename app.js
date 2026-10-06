@@ -12,11 +12,12 @@ const finePointer  = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const head  = $('#siteHead');
 const nav   = $('#mainNav');
 const burger = $('#burger');
+const progBar = $('#progressBar'), topBtn = $('#toTop');
 addEventListener('scroll', () => {
   head.classList.toggle('scrolled', scrollY > 30);
-  $('#progressBar').style.width =
+  if (progBar) progBar.style.width =
     (scrollY / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
-  $('#toTop').classList.toggle('show', scrollY > innerHeight * .8);
+  if (topBtn) topBtn.classList.toggle('show', scrollY > innerHeight * .8);
 }, { passive: true });
 
 burger.addEventListener('click', () => {
@@ -27,7 +28,7 @@ $$('#mainNav a').forEach(a => a.addEventListener('click', () => {
   nav.classList.remove('open');
   burger.setAttribute('aria-expanded', 'false');
 }));
-$('#toTop').addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+if (topBtn) topBtn.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
 /* ---------- reveal on scroll ---------- */
 const io = new IntersectionObserver(es => es.forEach(e => {
@@ -41,11 +42,13 @@ $$('.reveal').forEach((el, i) => {
 /* ---------- journey dots + nav highlight ---------- */
 const journeyLinks = $$('.journey a');
 const navLinks     = $$('#mainNav a');
+const tabLinks = $$('.page-tabs a');
 const secIO = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting) return;
   const id = '#' + e.target.id;
   journeyLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
   navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+  tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
 }), { rootMargin: '-45% 0px -45% 0px' });
 $$('main section[id]').forEach(s => secIO.observe(s));
 
@@ -67,7 +70,9 @@ if (finePointer && !reduceMotion) {
 
 /* ---------- neural canvas ---------- */
 (function neuro() {
-  const cv = $('#neuro'), ctx = cv.getContext('2d');
+  const cv = $('#neuro');
+  if (!cv) return;
+  const ctx = cv.getContext('2d');
   let W, H, pts = [], mouse = { x: -9e3, y: -9e3 };
   const DPR = Math.min(devicePixelRatio || 1, 2);
   const N = () => Math.min(90, Math.floor(W * H / 16000));
@@ -190,7 +195,9 @@ $$('.vmo-tab').forEach(tab => tab.addEventListener('click', () => {
 
 /* ---------- Tuliza breathing tool ---------- */
 (function tuliza() {
-  const orb = $('#tzOrb'), phaseEl = $('#tzPhase'), countEl = $('#tzCount'),
+  const orb = $('#tzOrb');
+  if (!orb) return;
+  const phaseEl = $('#tzPhase'), countEl = $('#tzCount'),
         cyclesEl = $('#tzCycles'), toggle = $('#tzToggle'), soundBtn = $('#tzSound');
   let seq = [4, 4, 4, 4], labels = ['Inhale', 'Hold', 'Exhale', 'Hold'];
   let running = false, step = -1, remaining = 0, cycles = 0, timer = null, scale = .62, firstPass = true;
@@ -278,11 +285,12 @@ $$('.vmo-tab').forEach(tab => tab.addEventListener('click', () => {
 
 /* ---------- marquee duplication ---------- */
 const track = $('#marqueeTrack');
-track.innerHTML += track.innerHTML;
+if (track) track.innerHTML += track.innerHTML;
 
 /* ---------- posts search ---------- */
 const postItems = $$('#posts li');
-$('#postSearch').addEventListener('input', e => {
+const postSearch = $('#postSearch');
+if (postSearch) postSearch.addEventListener('input', e => {
   const q = e.target.value.trim().toLowerCase();
   let shown = 0;
   postItems.forEach(li => {
